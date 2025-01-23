@@ -46,5 +46,28 @@ namespace WebAPI.Controllers
             return CreatedAtAction("Post", new { id = movie.ID }, movie);
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, Movie movie)
+        {
+            if (id != movie.ID)
+            {
+                return BadRequest();
+            }
+            await _movieRepository.UpdateMovie(movie);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteMovie(int id)
+        {
+            var movie = await _movieRepository.GetMovieByID(id);
+            if (movie == null)
+            {
+                return NotFound($"Movie with ID {id} was not found.");
+            }
+
+            await _movieRepository.DeleteMovie(id);
+            return NoContent();
+        }
     }
 }
