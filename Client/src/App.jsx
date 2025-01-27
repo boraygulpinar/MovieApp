@@ -15,8 +15,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MovieList />} />
-        <Route path="add-movie" element={<AddMovie />} />
-        <Route path="manage-movie" element={<ManageMovie />} />
+        <Route path="admin/add-movie" element={<AddMovie />} />
+        <Route path="admin/manage-movie" element={<ManageMovie />} />
       </Routes>
     </Router>
   )
