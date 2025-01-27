@@ -1,0 +1,14 @@
+.header {
+    background-color: rgb(78, 15, 47);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    padding-right: 25px;
+}
